@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Enlaces - GitHub Pages</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --uandes-red: #CE0019;
+            --uandes-blue-corp: #243746;
+            --uandes-ostra: #D6D1CA;
+            --uandes-white: #FFFFFF;
+            --uandes-blue-deep: #131E29;
+            --uandes-font-primary: 'DM Sans', Arial, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--uandes-font-primary);
+            background: linear-gradient(135deg, var(--uandes-blue-deep) 0%, var(--uandes-blue-corp) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: var(--uandes-white);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: var(--uandes-blue-corp);
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: var(--uandes-blue-corp);
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--uandes-blue-corp);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid var(--uandes-ostra);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            font-family: var(--uandes-font-primary);
+            background: var(--uandes-white);
+            color: var(--uandes-blue-corp);
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--uandes-red);
+        }
+        
+        input[type="text"]::placeholder {
+            color: #999;
+        }
+        
+        .result-section {
+            background: var(--uandes-ostra);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--uandes-red);
+        }
+        
+        .result-label {
+            color: var(--uandes-blue-corp);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .result-url {
+            background: var(--uandes-white);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--uandes-blue-corp);
+            word-break: break-all;
+            border: 1px solid var(--uandes-ostra);
+            margin-bottom: 12px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: var(--uandes-font-primary);
+        }
+        
+        .btn-copy {
+            background: var(--uandes-red);
+            color: var(--uandes-white);
+        }
+        
+        .btn-copy:hover {
+            background: #8A001A;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(206, 0, 25, 0.3);
+        }
+        
+        .btn-open {
+            background: var(--uandes-ostra);
+            color: var(--uandes-blue-corp);
+            border: 2px solid var(--uandes-blue-corp);
+        }
+        
+        .btn-open:hover {
+            background: var(--uandes-white);
+            border-color: var(--uandes-red);
+            color: var(--uandes-red);
+        }
+        
+        .btn-copy:disabled,
+        .btn-open:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .feedback {
+            text-align: center;
+            height: 20px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .example {
+            background: var(--uandes-ostra);
+            border-left: 4px solid var(--uandes-blue-corp);
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        
+        .example-title {
+            color: var(--uandes-blue-corp);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .example-text {
+            color: var(--uandes-blue-corp);
+            font-size: 13px;
+            line-height: 1.6;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        
+        .example-text strong {
+            color: var(--uandes-red);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Enlaces</h1>
+        <p class="subtitle">GitHub Pages - franrojasmay</p>
+        
+        <div class="form-group">
+            <label for="pathInput">Ingresa la ruta del archivo</label>
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="pathInput" 
+                    placeholder="ej: index.html"
+                    autocomplete="off"
+                >
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <div class="result-label">URL Generada</div>
+            <div class="result-url" id="resultUrl">https://franrojasmay.github.io/</div>
+            <div class="button-group">
+                <button class="btn-copy" id="copyBtn" onclick="copiarAlPortapapeles()">
+                    📋 Copiar
+                </button>
+                <button class="btn-open" id="openBtn" onclick="abrirEnNavegador()" disabled>
+                    🔗 Abrir
+                </button>
+            </div>
+            <div class="feedback" id="feedback"></div>
+        </div>
+        
+        <div class="example">
+            <div class="example-title">Ejemplos de rutas válidas</div>
+            <div class="example-text">
+                <strong>index.html</strong><br>
+                <strong>carpeta/archivo.html</strong><br>
+                <strong>docs/pagina.html</strong>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const baseUrl = 'https://franrojasmay.github.io/';
+        const pathInput = document.getElementById('pathInput');
+        const resultUrl = document.getElementById('resultUrl');
+        const copyBtn = document.getElementById('copyBtn');
+        const openBtn = document.getElementById('openBtn');
+        const feedback = document.getElementById('feedback');
+        
+        pathInput.addEventListener('input', function() {
+            const path = this.value.trim();
+            const fullUrl = path ? baseUrl + path : baseUrl;
+            resultUrl.textContent = fullUrl;
+            openBtn.disabled = !path;
+            feedback.textContent = '';
+        });
+        
+        function copiarAlPortapapeles() {
+            const url = resultUrl.textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                feedback.textContent = '✓ Copiado al portapapeles';
+                setTimeout(() => {
+                    feedback.textContent = '';
+                }, 2000);
+            }).catch(() => {
+                feedback.textContent = '✗ Error al copiar';
+                setTimeout(() => {
+                    feedback.textContent = '';
+                }, 2000);
+            });
+        }
+        
+        function abrirEnNavegador() {
+            const url = resultUrl.textContent;
+            if (url !== baseUrl) {
+                window.open(url, '_blank');
+            }
+        }
+        
+        pathInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                abrirEnNavegador();
+            }
+        });
+    </script>
+</body>
+</html>
