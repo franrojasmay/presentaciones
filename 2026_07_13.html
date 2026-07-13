@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana del 13 al 19 de julio de 2026 · PKD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d2a4d;
+    --ink-soft:#4a5578;
+    --paper:#f6f7fb;
+    --card:#ffffff;
+    --line:#e3e7f2;
+    --rojo:#c8362e;
+    --rojo-soft:#fdeeed;
+    --azul:#2a4d9b;
+    --azul-soft:#eaf0fb;
+    --amarillo-soft:#fff7e0;
+    --cal-header:#00b0f0;
+    --cal-amarillo:#ffff00;
+    --cal-rosa:#ff66cc;
+    --cal-evento:#2a7de1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Nunito',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    padding:24px 16px 56px;
+  }
+  .hoja{max-width:720px;margin:0 auto}
+
+  /* Cabecera */
+  header{
+    background:linear-gradient(135deg,var(--azul) 0%,#1d2a4d 100%);
+    color:#fff;
+    border-radius:18px;
+    padding:28px 28px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"📌";
+    position:absolute;top:14px;right:18px;font-size:26px;
+  }
+  .semana{
+    font-family:'Fredoka',sans-serif;
+    font-weight:600;
+    font-size:clamp(22px,4.5vw,30px);
+    line-height:1.2;
+    margin-bottom:10px;
+  }
+  .saludo{color:#dfe6f7;max-width:56ch}
+  .saludo strong{color:#fff}
+
+  /* Calendario */
+  .calendario{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    margin-top:16px;
+    padding:16px;
+  }
+  .calendario h2{
+    font-family:'Fredoka',sans-serif;
+    font-weight:600;font-size:18px;
+    margin-bottom:10px;
+  }
+  .cal-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.cal{
+    border-collapse:collapse;
+    width:100%;
+    min-width:640px;
+    font-size:12.5px;
+  }
+  table.cal th{
+    background:var(--cal-header);
+    color:#003049;
+    font-weight:800;
+    padding:5px 4px;
+    border:1px solid #0a0a0a;
+  }
+  table.cal td{
+    border:1px solid #0a0a0a;
+    padding:4px 5px;
+    text-align:center;
+    vertical-align:top;
+    background:#fff;
+    min-width:84px;
+  }
+  td.fecha{font-weight:800;padding:3px 5px}
+  tr.eventos td{height:30px;font-weight:700;color:var(--cal-evento);line-height:1.25}
+  td.hl-amarillo{background:var(--cal-amarillo)}
+  td.hl-rosa{background:var(--cal-rosa);color:#fff !important}
+
+  /* Ítems */
+  .items{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+  .item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .emoji{
+    flex:0 0 44px;height:44px;
+    background:var(--azul-soft);
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;
+  }
+  .item.pago .emoji{background:var(--amarillo-soft)}
+  .item.fiesta .emoji{background:var(--rojo-soft)}
+  .item h3{
+    font-family:'Fredoka',sans-serif;
+    font-weight:600;font-size:16.5px;
+    margin-bottom:2px;
+  }
+  .item p{color:var(--ink-soft)}
+  .item p + p{margin-top:6px}
+  .item a{color:var(--azul);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+  .item a:hover{color:var(--rojo)}
+
+  /* Datos de transferencia */
+  .transferencia{
+    background:var(--azul-soft);
+    border-radius:10px;
+    padding:10px 14px;
+    margin-top:8px;
+    font-size:14.5px;
+    color:var(--ink);
+  }
+  .transferencia b{display:block;margin-bottom:2px}
+  .confidencial{
+    font-size:13.5px;font-style:italic;color:var(--ink-soft);
+    margin-top:8px;
+  }
+
+  footer{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    margin-top:26px;
+  }
+  footer .corazon{color:var(--rojo)}
+
+  @media (max-width:480px){
+    .emoji{flex-basis:38px;height:38px;font-size:19px;border-radius:10px}
+    .item{padding:14px}
+  }
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header>
+    <div class="semana">📆 Semana del 13 al 19 de julio de 2026</div>
+    <p class="saludo">Queridas familias del <strong>PKD</strong>: les dejamos la información semanal. Este mensaje quedará anclado en el chat para que puedan revisarlo cuando lo necesiten.</p>
+  </header>
+
+  <section class="calendario">
+    <h2>📅 Calendario</h2>
+    <div class="cal-scroll">
+    <table class="cal">
+      <tr>
+        <th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th>
+      </tr>
+
+      <!-- Semana 13–19 jul -->
+      <tr>
+        <td class="fecha">13-jul</td><td class="fecha">14-jul</td><td class="fecha">15-jul</td><td class="fecha">16-jul</td><td class="fecha">17-jul</td><td class="fecha">18-jul</td><td class="fecha">19-jul</td>
+      </tr>
+      <tr class="eventos">
+        <td>Pago talleres 2° semestre</td>
+        <td>Capacitación monitores comunidades</td>
+        <td></td>
+        <td class="hl-amarillo">Feriado</td>
+        <td class="hl-amarillo">Interferiado</td>
+        <td>🎂 Cumpleaños Isa Castillo</td>
+        <td></td>
+      </tr>
+
+      <!-- Semana 20–26 jul -->
+      <tr>
+        <td class="fecha">20-jul</td><td class="fecha">21-jul</td><td class="fecha">22-jul</td><td class="fecha">23-jul</td><td class="fecha">24-jul</td><td class="fecha">25-jul</td><td class="fecha">26-jul</td>
+      </tr>
+      <tr class="eventos">
+        <td>Última semana talleres 1er semestre</td>
+        <td></td>
+        <td>Presentación talleres 1er semestre</td>
+        <td></td>
+        <td class="hl-amarillo">No hay clases</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <!-- Semana 27 jul – 2 ago -->
+      <tr>
+        <td class="fecha">27-jul</td><td class="fecha">28-jul</td><td class="fecha">29-jul</td><td class="fecha">30-jul</td><td class="fecha">31-jul</td><td class="fecha">01-ago</td><td class="fecha">02-ago</td>
+      </tr>
+      <tr class="eventos">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+
+      <!-- Semana 3–9 ago -->
+      <tr>
+        <td class="fecha">03-ago</td><td class="fecha">04-ago</td><td class="fecha">05-ago</td><td class="fecha">06-ago</td><td class="fecha">07-ago</td><td class="fecha">08-ago</td><td class="fecha">09-ago</td>
+      </tr>
+      <tr class="eventos">
+        <td></td><td></td><td></td><td></td><td></td><td></td>
+        <td>Misa nivel PK 12:00 hrs</td>
+      </tr>
+
+      <!-- Semana 10–16 ago -->
+      <tr>
+        <td class="fecha">10-ago</td><td class="fecha">11-ago</td><td class="fecha">12-ago</td><td class="fecha">13-ago</td><td class="fecha">14-ago</td><td class="fecha">15-ago</td><td class="fecha">16-ago</td>
+      </tr>
+      <tr class="eventos">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+
+      <!-- Semana 17–23 ago -->
+      <tr>
+        <td class="fecha">17-ago</td><td class="fecha">18-ago</td><td class="fecha">19-ago</td><td class="fecha">20-ago</td><td class="fecha">21-ago</td><td class="fecha">22-ago</td><td class="fecha">23-ago</td>
+      </tr>
+      <tr class="eventos">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+
+      <!-- Semana 24–30 ago -->
+      <tr>
+        <td class="fecha">24-ago</td><td class="fecha">25-ago</td><td class="fecha">26-ago</td><td class="fecha">27-ago</td><td class="fecha">28-ago</td><td class="fecha">29-ago</td><td class="fecha">30-ago</td>
+      </tr>
+      <tr class="eventos">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+
+      <!-- Semana 31 ago – 6 sep -->
+      <tr>
+        <td class="fecha">31-ago</td><td class="fecha">01-sep</td><td class="fecha">02-sep</td><td class="fecha">03-sep</td><td class="fecha">04-sep</td><td class="fecha">05-sep</td><td class="fecha">06-sep</td>
+      </tr>
+      <tr class="eventos">
+        <td></td><td></td><td></td><td></td>
+        <td>Día de la chilenidad (no es el baile este día)</td>
+        <td>Festival de Deportes Fundamor</td>
+        <td></td>
+      </tr>
+
+    </table>
+    </div>
+  </section>
+
+  <div class="items">
+
+    <div class="item">
+      <div class="emoji">📝</div>
+      <div>
+        <h3>Drive del curso</h3>
+        <p>Toda la información está <a href="https://docs.google.com/spreadsheets/d/1gnGd7rh7UTyOFID7LJySIXYZNKj5GwyF/edit?gid=1686581960#gid=1686581960" target="_blank" rel="noopener">aquí</a>.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">✝️</div>
+      <div>
+        <h3>Comunidades de acogida</h3>
+        <p>Agendar la 2ª reunión.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">🐮</div>
+      <div>
+        <h3>Campaña de leche para Fundamor</h3>
+        <p>Todos los <strong>martes</strong> lleva tu litro de leche.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">✍️</div>
+      <div>
+        <h3>Justificativos educación física y talleres</h3>
+        <p>Enviar a <a href="mailto:justificativosefi@saintgeorge.cl">justificativosefi@saintgeorge.cl</a> con copia a las misses.</p>
+      </div>
+    </div>
+
+    <div class="item fiesta">
+      <div class="emoji">🎂</div>
+      <div>
+        <h3>Cumpleaños Isa y Amanda Castillo</h3>
+        <p><strong>Sábado 18 de julio</strong>.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">🎁</div>
+      <div>
+        <h3>Chat para regalos de cumpleaños colectivos</h3>
+        <p>Únete con este <a href="https://chat.whatsapp.com/EpOsuNxt7qtFzZjbOmAWLR" target="_blank" rel="noopener">link</a>.</p>
+      </div>
+    </div>
+
+    <div class="item pago">
+      <div class="emoji">💰</div>
+      <div>
+        <h3>Cuota de curso</h3>
+        <p>Será de <strong>$40.000</strong>, que se puede pagar en 2 cuotas de $20.000 (una cada semestre).</p>
+        <div class="transferencia">
+          <b>Cuenta para depositar</b>
+          Banco Santander · Cta. vista 0 074 00 26924 0<br>
+          RUT 15.676.723-9<br>
+          <a href="mailto:franrojasmay@gmail.com">franrojasmay@gmail.com</a>
+        </div>
+        <p class="confidencial">Si alguien tiene alguna dificultad para pagar, por favor contacte a algún delegado por interno, para resolverlo en conjunto (se mantendrá la confidencialidad).</p>
+      </div>
+    </div>
+
+    <div class="item pago">
+      <div class="emoji">🏕️</div>
+      <div>
+        <h3>Paseo de curso</h3>
+        <p><strong>28 al 29 de noviembre</strong> en Laguna Esmeralda. Necesitamos pagar la reserva de <strong>$28.000 por familia</strong>.</p>
+        <div class="transferencia">
+          <b>Transferir a</b>
+          Felipe Toro · RUT 16.282.894-0<br>
+          Banco de Chile · Cta. corriente 00-225-27248-02<br>
+          <a href="mailto:felipe.toro.vargas@gmail.com">felipe.toro.vargas@gmail.com</a><br>
+          Asunto: <strong>Camping PKD</strong>
+        </div>
+        <p class="confidencial">Si alguien tiene alguna dificultad para pagar, por favor contacte a algún delegado por interno, para resolverlo en conjunto (se mantendrá la confidencialidad).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">🎒</div>
+      <div>
+        <h3>Muda de ropa</h3>
+        <p>Poner una muda completa en la mochila: pantalón o short, polerón, polera, ropa interior y calcetines, por si los niños se mojan.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">👕</div>
+      <div>
+        <h3>Ropero</h3>
+        <p>Todos los <strong>miércoles de 08:00 a 13:30 hrs</strong>. Lista actualizada de ropa perdida <a href="https://www.instagram.com/roperosgc/" target="_blank" rel="noopener">aquí</a>.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="emoji">⚽</div>
+      <div>
+        <h3>Festival de Deportes · 5 de septiembre</h3>
+        <p>Otra de las actividades del año será el festival deportivo del colegio, que reúne a la comunidad en torno al deporte. Lo recaudado va a Fundamor.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Delegados PKD <span class="corazon">♥</span> Semana del 13 al 19 de julio de 2026</footer>
+
+</div>
+</body>
+</html>
