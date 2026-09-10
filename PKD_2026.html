@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Semana del 17 al 23 de agosto de 2026 · PKD</title>
+<title>PKD 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
     line-height:1.2;
     margin-bottom:10px;
   }
-  .saludo{color:#dfe6f7;max-width:56ch}
+  .saludo{color:#dfe6f7;max-width:none;padding-right:20px}
   .saludo strong{color:#fff}
 
   /* Calendario */
@@ -149,7 +149,73 @@
   }
   footer .corazon{color:var(--rojo)}
 
+
+
+  /* Navegación por pestañas */
+  .tabs-nav{
+    display:flex;gap:8px;margin-top:16px;padding:6px;
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;
+  }
+  .tab-btn{
+    appearance:none;border:0;background:transparent;color:var(--ink-soft);
+    font:700 14px 'Nunito',system-ui,sans-serif;white-space:nowrap;
+    padding:10px 14px;border-radius:10px;cursor:pointer;transition:.18s ease;
+  }
+  .tab-btn:hover{background:var(--azul-soft);color:var(--azul)}
+  .tab-btn[aria-selected="true"]{background:var(--azul);color:#fff;box-shadow:0 3px 10px rgba(42,77,155,.18)}
+  .tab-panel{margin-top:16px}
+  .tab-panel[hidden]{display:none !important}
+  .panel-heading{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:18px 20px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-end;justify-content:space-between;
+  }
+  .panel-heading h2{font-family:'Fredoka',sans-serif;font-size:22px;line-height:1.2}
+  .panel-heading p{color:var(--ink-soft);font-size:14px;text-align:right;max-width:290px}
+  .panel-kicker{display:block;color:var(--azul);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+  .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .mini-card,.data-block,.birthday-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;
+  }
+  .mini-card h3,.data-block h3,.birthday-card h3{font-family:'Fredoka',sans-serif;font-size:16.5px;margin-bottom:8px}
+  .mini-card p{color:var(--ink-soft)}
+  .mini-card p+p{margin-top:5px}
+  .key-value{display:flex;justify-content:space-between;gap:16px;padding:5px 0;border-bottom:1px solid #eef1f7}
+  .key-value:last-child{border-bottom:0}
+  .key-value span{color:var(--ink-soft)}
+  .data-block{margin-top:12px}
+  .table-scroll,.schedule-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .clean-table,.schedule-table{width:100%;border-collapse:collapse;font-size:13.5px}
+  .clean-table th,.schedule-table thead th{background:var(--azul-soft);color:var(--ink);font-weight:800;text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  .clean-table td{padding:9px 10px;border-bottom:1px solid #eef1f7;vertical-align:top}
+  .clean-table tr:last-child td{border-bottom:0}
+  .clean-table a{color:var(--azul);font-weight:700;text-decoration:none}
+  .clean-table a:hover{text-decoration:underline}
+  .muted{color:#9aa2b6}
+  .birthday-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .birthday-card h3{color:var(--azul);margin-bottom:5px}
+  .birthday-card ul{list-style:none}
+  .birthday-card li{display:grid;grid-template-columns:32px 1fr;gap:8px;align-items:start;padding:6px 0;border-bottom:1px solid #eef1f7}
+  .birthday-card li:last-child{border-bottom:0}
+  .birthday-day{width:28px;height:28px;border-radius:9px;background:var(--rojo-soft);color:var(--rojo);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .schedule-wrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+  .schedule-table{min-width:690px;border-collapse:separate;border-spacing:0}
+  .schedule-table th,.schedule-table td{padding:10px 9px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:middle;text-align:center}
+  .schedule-table thead th{text-align:center;background:var(--cal-header);color:#003049}
+  .schedule-table tr>*:last-child{border-right:0}
+  .schedule-table tbody tr:last-child>*{border-bottom:0}
+  .schedule-table td{font-weight:700;color:var(--ink)}
+  .time-cell{width:90px;background:#f7f8fc;color:var(--ink);font-size:13px;white-space:nowrap}
+  .time-cell span{color:var(--ink-soft);font-weight:600}
+
   @media (max-width:480px){
+
+    .tabs-nav{margin-left:-2px;margin-right:-2px}
+    .tab-btn{padding:9px 12px}
+    .panel-heading{align-items:flex-start;flex-direction:column;gap:5px}
+    .panel-heading p{text-align:left;max-width:none}
+    .info-grid,.birthday-grid{grid-template-columns:1fr}
+
     .emoji{flex-basis:38px;height:38px;font-size:19px;border-radius:10px}
     .item{padding:14px}
   }
@@ -159,10 +225,18 @@
 <div class="hoja">
 
   <header>
-    <div class="semana">📆 Semana del 17 al 23 de agosto de 2026</div>
-    <p class="saludo">Queridas familias del <strong>PKD</strong>: les dejamos la información semanal. Este mensaje quedará anclado en el chat para que puedan revisarlo cuando lo necesiten.</p>
+    <div class="semana">PKD 2026</div>
+    <p class="saludo">Queridas familia del PKD: les dejamos la información del curso. Este mensaje quedará anclado en el chat para que puedan revisarlo cuando lo necesiten.</p>
   </header>
 
+  <nav class="tabs-nav" role="tablist" aria-label="Información PKD 2026">
+    <button class="tab-btn" id="btn-inicio" role="tab" aria-selected="true" aria-controls="tab-inicio" data-tab="tab-inicio">🏠 Inicio</button>
+    <button class="tab-btn" id="btn-datos" role="tab" aria-selected="false" aria-controls="tab-datos" data-tab="tab-datos">📌 Datos relevantes</button>
+    <button class="tab-btn" id="btn-cumples" role="tab" aria-selected="false" aria-controls="tab-cumples" data-tab="tab-cumples">🎂 Cumpleaños</button>
+    <button class="tab-btn" id="btn-horario" role="tab" aria-selected="false" aria-controls="tab-horario" data-tab="tab-horario">🕒 Horario</button>
+  </nav>
+
+  <div class="tab-panel" id="tab-inicio" role="tabpanel" aria-labelledby="btn-inicio">
   <section class="calendario">
     <h2>📅 Calendario</h2>
     <div class="cal-scroll">
@@ -171,49 +245,6 @@
         <th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th>
       </tr>
 
-      <!-- Semana 17–23 ago -->
-      <tr>
-        <td class="fecha">17-ago</td><td class="fecha">18-ago</td><td class="fecha">19-ago</td><td class="fecha">20-ago</td><td class="fecha">21-ago</td><td class="fecha">22-ago</td><td class="fecha">23-ago</td>
-      </tr>
-      <tr class="eventos">
-        <td></td><td></td><td></td><td></td><td></td>
-        <td>Entrenamiento Fundamor 10:00 hrs. Parque Bicentenario </td>
-        <td></td>
-      </tr>
-
-      <!-- Semana 24–30 ago -->
-      <tr>
-        <td class="fecha">24-ago</td><td class="fecha">25-ago</td><td class="fecha">26-ago</td><td class="fecha">27-ago</td><td class="fecha">28-ago</td><td class="fecha">29-ago</td><td class="fecha">30-ago</td>
-      </tr>
-      <tr class="eventos">
-        <td></td><td></td><td></td><td></td>
-        <td>🎂 Cumpleaños Elena, Eloísa, Matilde y Sara</td>
-        <td></td>
-        <td>Último plazo para la 2ª reunión de comunidad</td>
-      </tr>
-
-      <!-- Semana 31 ago – 6 sep -->
-      <tr>
-        <td class="fecha">31-ago</td><td class="fecha">01-sep</td><td class="fecha">02-sep</td><td class="fecha">03-sep</td><td class="fecha">04-sep</td><td class="fecha">05-sep</td><td class="fecha">06-sep</td>
-      </tr>
-      <tr class="eventos">
-        <td></td><td></td>
-        <td>Encuentro de formación parental 08:00 hrs.</td>
-        <td></td>
-        <td>Día de la chilenidad<br>Todo el colegio sale a las 13:20 hrs.</td>
-        <td>Festival de Deportes Fundamor</td>
-        <td></td>
-      </tr>
-
-      <!-- Semana 7–13 sep -->
-      <tr>
-        <td class="fecha">07-sep</td><td class="fecha">08-sep</td><td class="fecha">09-sep</td><td class="fecha">10-sep</td><td class="fecha">11-sep</td><td class="fecha">12-sep</td><td class="fecha">13-sep</td>
-      </tr>
-      <tr class="eventos">
-        <td></td>
-        <td>Baile fiestas patrias 11:30 hrs.<br>🎂 Cumpleaños Ferran 16:00 a 19:00 hrs.<br>Capacitación monitores comunidades 19 hrs.</td>
-        <td></td><td></td><td></td><td></td><td></td>
-      </tr>
 
       <!-- Semana 14–20 sep -->
       <tr>
@@ -248,7 +279,7 @@
         <td class="fecha">12-oct</td><td class="fecha">13-oct</td><td class="fecha">14-oct</td><td class="fecha">15-oct</td><td class="fecha">16-oct</td><td class="fecha">17-oct</td><td class="fecha">18-oct</td>
       </tr>
       <tr class="eventos">
-        <td class="hl-amarillo">Feriado</td><td></td><td>Encuentro con Cristo<br>(ropa de calle)</td><td></td><td></td><td>Feria de las Pulgas 16 hrs.</td><td></td>
+        <td class="hl-amarillo">Feriado</td><td></td><td>Encuentro con Cristo<br>(ropa de calle)</td><td></td><td></td><td>Feria de las Pulgas<br>15:00 a 21:00 hrs.</td><td></td>
       </tr>
 
       <!-- Semana 19–25 oct -->
@@ -288,7 +319,7 @@
         <td class="fecha">23-nov</td><td class="fecha">24-nov</td><td class="fecha">25-nov</td><td class="fecha">26-nov</td><td class="fecha">27-nov</td><td class="fecha">28-nov</td><td class="fecha">29-nov</td>
       </tr>
       <tr class="eventos">
-        <td></td><td></td><td></td><td></td><td>Último día talleres extraprogramáticos. <br>Camping de curso · Laguna Esmeralda</td><td>Camping de curso · Laguna Esmeralda</td><td>Camping de curso · Laguna Esmeralda</td>
+        <td></td><td></td><td></td><td></td><td>Último día talleres extraprogramáticos<br>Camping de curso · Laguna Esmeralda</td><td>Camping de curso · Laguna Esmeralda</td><td>Camping de curso · Laguna Esmeralda</td>
       </tr>
 
       <!-- Semana 30 nov – 6 dic -->
@@ -321,7 +352,17 @@
       <div class="emoji">✝️</div>
       <div>
         <h3>Comunidades de acogida</h3>
-        <p>Agendar la 2ª reunión hasta el <strong>30 de agosto</strong>.</p>
+        <p>Agendar la 3ª reunión antes del <strong>30 de octubre</strong>.</p>
+      </div>
+    </div>
+
+    <div class="item fiesta">
+      <div class="emoji">🎪</div>
+      <div>
+        <h3>Feria de las Pulgas</h3>
+        <p><strong>Sábado 17 de octubre · 15:00 a 21:00 hrs.</strong></p>
+        <p>Se envió por agenda un talonario de rifa por familia (solo se manda al hermano más chico). Valor del número: <strong>$2.500</strong>.</p>
+        <p>Se debe mandar el <strong>EFECTIVO</strong> y el talonario en la agenda hasta el <strong>13 de octubre</strong>.</p>
       </div>
     </div>
 
@@ -394,19 +435,98 @@
         <p>Todos los <strong>miércoles de 08:00 a 13:30 hrs</strong>. Lista actualizada de ropa perdida <a href="https://www.instagram.com/roperosgc/" target="_blank" rel="noopener">aquí</a>.</p>
       </div>
     </div>
-
-    <div class="item">
-      <div class="emoji">⚽</div>
-      <div>
-        <h3>Festival de Deportes · 5 de septiembre</h3>
-        <p>Otra de las actividades del año será el festival deportivo del colegio, que reúne a la comunidad en torno al deporte. Lo recaudado va a Fundamor.</p>
-      </div>
-    </div>
+</div>
 
   </div>
 
-  <footer>Delegados PKD <span class="corazon">♥</span> Semana del 17 al 23 de agosto de 2026</footer>
+
+<section class="tab-panel info-panel" id="tab-datos" role="tabpanel" aria-labelledby="btn-datos" hidden>
+  <div class="panel-heading">
+    <div><span class="panel-kicker">PKD 2026</span><h2>📌 Datos relevantes</h2></div>
+    <p>Información permanente del curso, contactos y horarios.</p>
+  </div>
+
+  <div class="info-grid">
+    <article class="mini-card">
+      <h3>Curso</h3>
+      <div class="key-value"><span>Curso</span><strong>PK D</strong></div>
+      <div class="key-value"><span>Año</span><strong>2026</strong></div>
+    </article>
+    <article class="mini-card">
+      <h3>Horarios de clases</h3>
+      <p><strong>Lunes a Viernes 7.55 AM a 13.15 PM</strong></p>
+      <p>Miércoles 7.55 AM a 2 PM</p>
+    </article>
+    <article class="mini-card">
+      <h3>Ropero</h3>
+      <p>Entrega de Ropa Perdida/Compra segunda mano</p>
+      <p><strong>Todos los miércoles 8 AM a 13.30 hrs.</strong></p>
+    </article>
+    <article class="mini-card">
+      <h3>Teléfonos del colegio</h3>
+      <div class="key-value"><span>Central</span><strong>+56 22 355 6100</strong></div>
+      <div class="key-value"><span>Enfermería</span><strong>+56 22 355 6128</strong></div>
+      <div class="key-value"><span>Enfermería</span><strong>+56 22 355 6246</strong></div>
+    </article>
+  </div>
+
+  <div class="data-block">
+    <h3>Delegados</h3>
+    <div class="table-scroll"><table class="clean-table"><thead><tr><th>Nombre</th><th>Rol</th><th>Mail</th><th>Celular</th></tr></thead><tbody><tr><td>Francisca Rojas-May</td><td>Curso - CDA</td><td><a href="mailto:franrojasmay@gmail.com">franrojasmay@gmail.com</a></td><td>9 7495 7893</td></tr><tr><td>Sofía Brunner</td><td>Curso - Pastoral</td><td><a href="mailto:sofia.brunner@gmail.com">sofia.brunner@gmail.com</a></td><td>9 9319 2068</td></tr><tr><td>Ignacio Garheis Cugliandolo</td><td>Deporte</td><td><a href="mailto:igarheis@gmail.com">igarheis@gmail.com</a></td><td>9 5416 9215</td></tr><tr><td>Felipe Toro</td><td>Deporte</td><td><a href="mailto:felipe.toro.vargas@gmail.com">felipe.toro.vargas@gmail.com</a></td><td>9 9888 5186</td></tr></tbody></table></div>
+  </div>
+  <div class="data-block">
+    <h3>Misses</h3>
+    <div class="table-scroll"><table class="clean-table"><thead><tr><th>Nombre</th><th>Rol</th><th>Mail</th></tr></thead><tbody><tr><td>Mafalda Pizarro</td><td>Head Teacher</td><td><a href="mailto:mpizarro@saintgeorge.cl">mpizarro@saintgeorge.cl</a></td></tr><tr><td>Daniela García</td><td>Teacher</td><td><a href="mailto:dgarcia@saintgeorge.cl">dgarcia@saintgeorge.cl</a></td></tr></tbody></table></div>
+  </div>
+  <div class="data-block">
+    <h3>Infant School</h3>
+    <div class="table-scroll"><table class="clean-table"><thead><tr><th>Nombre</th><th>Rol</th><th>Mail</th><th>Anexo</th></tr></thead><tbody><tr><td>Francisca Tagle</td><td>Directora</td><td><a href="mailto:ftagle@saintgeorge.cl">ftagle@saintgeorge.cl</a></td><td><span class="muted">—</span></td></tr><tr><td>Javiera Aravena</td><td>Coord. Academ.</td><td><a href="mailto:jaravena@saintgeorge.cl">jaravena@saintgeorge.cl</a></td><td><span class="muted">—</span></td></tr><tr><td>José Patricio Galindo</td><td>Secretario</td><td><a href="mailto:jgalindo@saintgeorge.cl">jgalindo@saintgeorge.cl</a></td><td>171.0</td></tr><tr><td>Yasna Torrijo</td><td>Pastoral</td><td><a href="mailto:ytorrijo@saintgeorge.cl">ytorrijo@saintgeorge.cl</a></td><td><span class="muted">—</span></td></tr><tr><td>Katherine Greene</td><td>Finanzas/ certificados</td><td><span class="muted">—</span></td><td><span class="muted">—</span></td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section class="tab-panel" id="tab-cumples" role="tabpanel" aria-labelledby="btn-cumples" hidden>
+  <div class="panel-heading">
+    <div><span class="panel-kicker">Celebraciones</span><h2>🎂 Cumpleaños</h2></div>
+    <p>Fechas de cumpleaños del PKD ordenadas por mes.</p>
+  </div>
+  <div class="birthday-grid"><article class="birthday-card"><h3>Enero</h3><ul><li><span class="birthday-day">14</span><span>José Tomás Olivares Castillo</span></li></ul></article><article class="birthday-card"><h3>Febrero</h3><ul><li><span class="birthday-day">14</span><span>Begoña Vásquez Urzúa</span></li><li><span class="birthday-day">24</span><span>Delfina María Vásquez Rojas-May</span></li><li><span class="birthday-day">26</span><span>Borja Sepúlveda Cortez</span></li></ul></article><article class="birthday-card"><h3>Marzo</h3><ul><li><span class="birthday-day">18</span><span>Susan Chancí Rodríguez</span></li></ul></article><article class="birthday-card"><h3>Abril</h3><ul><li><span class="birthday-day">20</span><span>Domingo Leighton Salazar</span></li></ul></article><article class="birthday-card"><h3>Mayo</h3><ul><li><span class="birthday-day">4</span><span>Antonia Ignacia Korpocic Zamora</span></li><li><span class="birthday-day">11</span><span>Rocío Carolina Villavicencio Piñango</span></li><li><span class="birthday-day">24</span><span>Olivia Besio Torres</span></li><li><span class="birthday-day">27</span><span>Ventura Sánchez Gueneau de Mussy</span></li></ul></article><article class="birthday-card"><h3>Junio</h3><ul><li><span class="birthday-day">21</span><span>Rafael Ignacio Baladron Cañas</span></li><li><span class="birthday-day">28</span><span>Mikel Kappes Usandizaga</span></li></ul></article><article class="birthday-card"><h3>Julio</h3><ul><li><span class="birthday-day">9</span><span>Elena Matte Brunner</span></li><li><span class="birthday-day">14</span><span>Isabel Castillo Figueroa</span></li></ul></article><article class="birthday-card"><h3>Agosto</h3><ul><li><span class="birthday-day">12</span><span>Eloísa Eusquiza Huerta</span></li><li><span class="birthday-day">24</span><span>Matilde Barros Millán</span></li><li><span class="birthday-day">27</span><span>Emilio Antonio Disi Cumsille</span></li></ul></article><article class="birthday-card"><h3>Septiembre</h3><ul><li><span class="birthday-day">8</span><span>Ferran Aste Riveros</span></li><li><span class="birthday-day">14</span><span>Martina Rodríguez Campaña</span></li><li><span class="birthday-day">21</span><span>Benicio Lautaro Valdivia Quintana</span></li><li><span class="birthday-day">22</span><span>Sara Alejandra Cugliandolo Reitze</span></li></ul></article><article class="birthday-card"><h3>Octubre</h3><ul><li><span class="birthday-day">7</span><span>Eloísa Donoso Campos</span></li><li><span class="birthday-day">17</span><span>Tomás Rossel Goles</span></li></ul></article><article class="birthday-card"><h3>Noviembre</h3><ul><li><span class="birthday-day">7</span><span>Zlatan Serka Schroeder</span></li><li><span class="birthday-day">8</span><span>Facundo Martínez Larach</span></li><li><span class="birthday-day">29</span><span>Emilia Leonor Tejada Rubio</span></li></ul></article><article class="birthday-card"><h3>Diciembre</h3><ul><li><span class="birthday-day">16</span><span>Benjamín Toro García-Huidobro</span></li></ul></article></div>
+</section>
+
+<section class="tab-panel" id="tab-horario" role="tabpanel" aria-labelledby="btn-horario" hidden>
+  <div class="panel-heading">
+    <div><span class="panel-kicker">Semana</span><h2>🕒 Horario</h2></div>
+    <p>Horario semanal del curso.</p>
+  </div>
+  <div class="schedule-wrap"><table class="schedule-table">
+    <thead><tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr></thead>
+    <tbody><tr><th class="time-cell">07:55<br><span>– 08:30</span></th><td>Oración y daily routine</td><td>Oración y daily routine</td><td>Oración y daily routine</td><td>Oración y daily routine</td><td>Oración y daily routine</td></tr><tr><th class="time-cell">08:30<br><span>– 09:15</span></th><td>ELA</td><td>ELA</td><td>ELA</td><td>Unit</td><td>Orientación</td></tr><tr><th class="time-cell">09:15<br><span>– 09:40</span></th><td>Snack/ recess</td><td>Snack/ recess</td><td>Snack/ recess</td><td>Snack/ recess</td><td>Snack/ recess</td></tr><tr><th class="time-cell">09:40<br><span>– 10:00</span></th><td>Storytelling</td><td>Storytelling</td><td>Storytelling</td><td>Storytelling</td><td>Storytelling</td></tr><tr><th class="time-cell">10:00<br><span>– 10:45</span></th><td>Psicomotricidad</td><td>Unit</td><td>Unit</td><td>Corners</td><td>Ph. Education</td></tr><tr><th class="time-cell">10:45<br><span>– 11:30</span></th><td>Psicomotricidad</td><td>Unit</td><td>Unit</td><td>Int. English</td><td>ELA</td></tr><tr><th class="time-cell">11:30<br><span>– 11:50</span></th><td>Recess</td><td>Recess</td><td>Recess</td><td>Recess</td><td>Recess</td></tr><tr><th class="time-cell">11:50<br><span>– 12:35</span></th><td>Unit</td><td>Music</td><td>Unit</td><td>Ph. Education</td><td>Unit</td></tr><tr><th class="time-cell">12:35<br><span>– 13:20</span></th><td>Unit</td><td>Ph. Education</td><td>Arts</td><td>Unit</td><td>Unit</td></tr><tr><th class="time-cell">13:20<br><span>– 13:50</span></th><td></td><td></td><td>Unit</td><td></td><td></td></tr></tbody>
+  </table></div>
+</section>
+
+  <footer>Delegados PKD <span class="corazon">♥</span></footer>
 
 </div>
+
+<script>
+  (function(){
+    const buttons = Array.from(document.querySelectorAll('.tab-btn'));
+    const panels = Array.from(document.querySelectorAll('.tab-panel'));
+    function activate(button, updateHash=true){
+      const target = button.getAttribute('data-tab');
+      buttons.forEach(btn => btn.setAttribute('aria-selected', btn === button ? 'true' : 'false'));
+      panels.forEach(panel => panel.hidden = panel.id !== target);
+      if(updateHash && history.replaceState){
+        const key = target.replace('tab-','');
+        history.replaceState(null,'','#'+key);
+      }
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    buttons.forEach(btn => btn.addEventListener('click', () => activate(btn)));
+    const hash = location.hash.replace('#','');
+    const fromHash = buttons.find(btn => btn.dataset.tab === 'tab-'+hash);
+    if(fromHash) activate(fromHash,false);
+  })();
+</script>
+
 </body>
 </html>
